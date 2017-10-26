@@ -971,7 +971,7 @@ export default class JiraApi {
     const header = {
       uri: this.makeUri({
         pathname: `/issue/${issueId}/worklog`,
-        query: { adjustEstimate: 'new', newEstimate },
+        query: newEstimate ? { adjustEstimate: 'new', newEstimate } : {},
       }),
       body: worklog,
       method: 'POST',
